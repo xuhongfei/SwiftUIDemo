@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                NavigationLink(destination: CreatingAndCombingViews(landmark: landmarkData[0])) {
+                    Text("Creating and Combing Views")
+                }
+                NavigationLink(destination: LandmarkList()) {
+                    Text("Building Lists and Navigation")
+                }
+            }.navigationBarTitle("SwiftUI Demo")
+        }
     }
 }
 
