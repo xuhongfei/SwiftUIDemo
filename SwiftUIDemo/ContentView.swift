@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: CreatingAndCombingViews(landmark: landmarkData[0])) {
+                NavigationLink(destination: CreatingAndCombingViews(landmark: landmarkData[0]).environmentObject(UserData())) {
                     Text("Creating and Combing Views")
                 }
                 NavigationLink(destination: BuildingListsAndNavigation()) {
