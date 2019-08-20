@@ -17,6 +17,8 @@
 		D854EE402304F27E00CFA3A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D854EE3E2304F27E00CFA3A8 /* LaunchScreen.storyboard */; };
 		D854EE4B2304F27E00CFA3A8 /* SwiftUIDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854EE4A2304F27E00CFA3A8 /* SwiftUIDemoTests.swift */; };
 		D854EE562304F27E00CFA3A8 /* SwiftUIDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D854EE552304F27E00CFA3A8 /* SwiftUIDemoUITests.swift */; };
+		D865980F230A32C9001961EE /* HandingUserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865980E230A32C9001961EE /* HandingUserInput.swift */; };
+		D8659811230A395B001961EE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8659810230A395B001961EE /* UserData.swift */; };
 		D8D841FF2306A96400F97FBE /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D841FE2306A96400F97FBE /* CircleImage.swift */; };
 		D8D842012306AA8A00F97FBE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D842002306AA8A00F97FBE /* MapView.swift */; };
 		D8D842032306B37A00F97FBE /* CreatingAndCombingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D842022306B37A00F97FBE /* CreatingAndCombingViews.swift */; };
@@ -72,6 +74,8 @@
 		D854EE512304F27E00CFA3A8 /* SwiftUIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D854EE552304F27E00CFA3A8 /* SwiftUIDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDemoUITests.swift; sourceTree = "<group>"; };
 		D854EE572304F27E00CFA3A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D865980E230A32C9001961EE /* HandingUserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandingUserInput.swift; sourceTree = "<group>"; };
+		D8659810230A395B001961EE /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D8D841FE2306A96400F97FBE /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		D8D842002306AA8A00F97FBE /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D8D842022306B37A00F97FBE /* CreatingAndCombingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingAndCombingViews.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				D854EE372304F27B00CFA3A8 /* ContentView.swift */,
 				D8D842042306B56200F97FBE /* Creating and Combing Views */,
 				D8D842062309695500F97FBE /* Building Lists and Navigation */,
+				D865980D230A32A7001961EE /* Handing User Input */,
 				D8D8420D2309802000F97FBE /* Resources */,
 				D8D842052306B57E00F97FBE /* Supporting Files */,
 				D854EE3B2304F27E00CFA3A8 /* Preview Content */,
@@ -179,6 +184,14 @@
 			path = SwiftUIDemoUITests;
 			sourceTree = "<group>";
 		};
+		D865980D230A32A7001961EE /* Handing User Input */ = {
+			isa = PBXGroup;
+			children = (
+				D865980E230A32C9001961EE /* HandingUserInput.swift */,
+			);
+			path = "Handing User Input";
+			sourceTree = "<group>";
+		};
 		D8D842042306B56200F97FBE /* Creating and Combing Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +220,7 @@
 				D8D84209230969B200F97FBE /* Landmark.swift */,
 				D845DA422309814700C1508F /* LandmarkRow.swift */,
 				D845DA442309839700C1508F /* LandmarkList.swift */,
+				D8659810230A395B001961EE /* UserData.swift */,
 			);
 			path = "Building Lists and Navigation";
 			sourceTree = "<group>";
@@ -375,11 +389,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8659811230A395B001961EE /* UserData.swift in Sources */,
 				D8D842082309698E00F97FBE /* BuildingListsAndNavigation.swift in Sources */,
 				D845DA452309839700C1508F /* LandmarkList.swift in Sources */,
 				D8D842012306AA8A00F97FBE /* MapView.swift in Sources */,
 				D8D842032306B37A00F97FBE /* CreatingAndCombingViews.swift in Sources */,
 				D8D8420A230969B200F97FBE /* Landmark.swift in Sources */,
+				D865980F230A32C9001961EE /* HandingUserInput.swift in Sources */,
 				D854EE342304F27B00CFA3A8 /* AppDelegate.swift in Sources */,
 				D854EE362304F27B00CFA3A8 /* SceneDelegate.swift in Sources */,
 				D854EE382304F27B00CFA3A8 /* ContentView.swift in Sources */,

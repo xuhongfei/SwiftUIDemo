@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct CreatingAndCombingViews: View {
-    
+    @EnvironmentObject var userData: UserData
     var landmark: Landmark
+    
+    var landmarkIndex: Int {
+        userData.lanmarks.firstIndex(where: { $0.id == landmark.id })!
+    }
     
     var body: some View {
         VStack {
@@ -22,8 +26,19 @@ struct CreatingAndCombingViews: View {
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
-                Text(landmark.name)
-                    .font(.title)
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                    Button(action: {
+                        self.userData.lanmarks[self.landmarkIndex].isFavorite.toggle()
+                    }) {
+                        if self.userData.lanmarks[self.landmarkIndex].isFavorite {
+                            Image(systemName: "star.fill").foregroundColor(.yellow)
+                        } else {
+                            Image(systemName: "star").foregroundColor(.gray)
+                        }
+                    }
+                }
                 HStack {
                     Text(landmark.park)
                         .font(.subheadline)
@@ -43,6 +58,7 @@ struct CreatingAndCombingViews: View {
 struct CreatingAndCombingViews_Previews: PreviewProvider {
     static var previews: some View {
         CreatingAndCombingViews(landmark: landmarkData[0])
+            .environmentObject(UserData())
     }
 }
 #endif

@@ -15,8 +15,11 @@ struct ContentView: View {
                 NavigationLink(destination: CreatingAndCombingViews(landmark: landmarkData[0])) {
                     Text("Creating and Combing Views")
                 }
-                NavigationLink(destination: LandmarkList()) {
+                NavigationLink(destination: BuildingListsAndNavigation()) {
                     Text("Building Lists and Navigation")
+                }
+                NavigationLink(destination: LandmarkList().environmentObject(UserData())) {
+                    Text("Handing User Input")
                 }
             }.navigationBarTitle("SwiftUI Demo")
         }
