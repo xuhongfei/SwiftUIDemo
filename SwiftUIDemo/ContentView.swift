@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: CreatingAndCombingViews(landmark: landmarkData[0]).environmentObject(UserData())) {
+                NavigationLink(destination: LandmarkDetail(landmark: landmarkData[0]).environmentObject(UserData())) {
                     Text("Creating and Combing Views")
                 }
                 NavigationLink(destination: BuildingListsAndNavigation()) {
@@ -26,6 +26,9 @@ struct ContentView: View {
                 }
                 NavigationLink(destination: AnimatingViewsAndTransitions()) {
                     Text("Animating Views and Transitions")
+                }
+                NavigationLink(destination: CategoryHome()) {
+                    Text("Composing Complex Interfaces")
                 }
             }.navigationBarTitle("SwiftUI Demo")
         }

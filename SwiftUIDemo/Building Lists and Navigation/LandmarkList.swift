@@ -22,7 +22,7 @@ struct LandmarkList: View {
                 
                 ForEach(landmarkData) { landmark in
                     if !self.userData.showFavoritesOnly || landmark.isFavorite {
-                        NavigationLink(destination: CreatingAndCombingViews(landmark: landmark)) {
+                        NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
                             LandmarkRow(landmark: landmark)
                         }
                     }
@@ -37,7 +37,9 @@ struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
         // "iPhone SE", "iPhone XS"
 //        ForEach(["iPhone XS"], id: \.self) { deviceName in
-        LandmarkList().environmentObject(UserData())
+        NavigationView {
+            LandmarkList().environmentObject(UserData())
+        }
     }
 }
 #endif

@@ -1,5 +1,5 @@
 //
-//  CreatingAndCombingViews.swift
+//  LandmarkDetail.swift
 //  SwiftUIDemo
 //
 //  Created by Xu, Freddy on 2019/8/16.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CreatingAndCombingViews: View {
+struct LandmarkDetail: View {
     @EnvironmentObject var userData: UserData
     var landmark: Landmark
     
@@ -55,9 +55,9 @@ struct CreatingAndCombingViews: View {
 }
 
 #if DEBUG
-struct CreatingAndCombingViews_Previews: PreviewProvider {
+struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CreatingAndCombingViews(landmark: landmarkData[0])
+        LandmarkDetail(landmark: landmarkData[0])
             .environmentObject(UserData())
     }
 }
