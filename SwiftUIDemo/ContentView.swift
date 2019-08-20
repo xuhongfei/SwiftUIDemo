@@ -24,6 +24,9 @@ struct ContentView: View {
                 NavigationLink(destination: Badge()) {
                     Text("Drawing Paths and Shapes")
                 }
+                NavigationLink(destination: AnimatingViewsAndTransitions()) {
+                    Text("Animating Views and Transitions")
+                }
             }.navigationBarTitle("SwiftUI Demo")
         }
     }
