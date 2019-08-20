@@ -21,6 +21,9 @@ struct ContentView: View {
                 NavigationLink(destination: LandmarkList().environmentObject(UserData())) {
                     Text("Handing User Input")
                 }
+                NavigationLink(destination: Badge()) {
+                    Text("Drawing Paths and Shapes")
+                }
             }.navigationBarTitle("SwiftUI Demo")
         }
     }
