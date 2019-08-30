@@ -10,27 +10,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            List {
-                NavigationLink(destination: LandmarkDetail(landmark: landmarkData[0]).environmentObject(UserData())) {
-                    Text("Creating and Combing Views")
-                }
-                NavigationLink(destination: BuildingListsAndNavigation()) {
-                    Text("Building Lists and Navigation")
-                }
-                NavigationLink(destination: LandmarkList().environmentObject(UserData())) {
-                    Text("Handing User Input")
-                }
-                NavigationLink(destination: Badge()) {
-                    Text("Drawing Paths and Shapes")
-                }
-                NavigationLink(destination: AnimatingViewsAndTransitions()) {
-                    Text("Animating Views and Transitions")
-                }
-                NavigationLink(destination: CategoryHome()) {
-                    Text("Composing Complex Interfaces")
-                }
-            }.navigationBarTitle("SwiftUI Demo")
+        TabView {
+            CategoryHome().tabItem {
+                Image(systemName: "6.square.fill")
+                Text("Composing Complex Interfaces")
+            }
+            AnimatingViewsAndTransitions().tabItem {
+                Image(systemName: "5.square.fill")
+                Text("Animating Views and Transitions")
+            }
+            
+            Badge().tabItem {
+                Image(systemName: "4.square.fill")
+                Text("Drawing Paths and Shapes")
+            }
+            LandmarkList().environmentObject(UserData()).tabItem {
+                Image(systemName: "3.square.fill")
+                Text("Handing User Input")
+            }
+            NavigationView {
+                BuildingListsAndNavigation()
+            }.tabItem {
+                Image(systemName: "2.square.fill")
+                Text("Building Lists and Navigation")
+            }
+            NavigationView {
+                LandmarkDetail(landmark: landmarkData[0]).environmentObject(UserData())
+            }.tabItem {
+                Image(systemName: "1.square.fill")
+                Text("Creating and Combing Views")
+            }
         }
     }
 }

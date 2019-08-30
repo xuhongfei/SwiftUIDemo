@@ -13,13 +13,11 @@ struct LandmarkList: View {
     @EnvironmentObject var userData: UserData
     
     var body: some View {
-//        NavigationView {
-//        }
+        NavigationView {
             List {
                 Toggle(isOn: $userData.showFavoritesOnly) {
                     Text("Favorites Only")
                 }
-                
                 ForEach(landmarkData) { landmark in
                     if !self.userData.showFavoritesOnly || landmark.isFavorite {
                         NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
@@ -29,6 +27,7 @@ struct LandmarkList: View {
                 }
             }
             .navigationBarTitle(Text("Landmarks"))
+        }
     }
 }
 

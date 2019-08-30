@@ -1,5 +1,5 @@
 //
-//  CategoryHome.swift
+//  Home.swift
 //  SwiftUIDemo
 //
 //  Created by Xu, Freddy on 2019/8/20.
@@ -11,9 +11,10 @@ import SwiftUI
 struct CategoryHome: View {
     
     var categories: [String: [Landmark]] {
-        Dictionary(grouping: landmarkData, by: {
-            $0.category.rawValue
-        })
+        Dictionary(
+            grouping: landmarkData,
+            by: { $0.category.rawValue }
+        )
     }
     
     var featured: [Landmark] {
@@ -34,25 +35,27 @@ struct CategoryHome: View {
     }
     
     var body: some View {
-        List {
-            FeaturedLandmarks(landmarks: featured)
-                .scaledToFill()
-                .frame(height: 200)
-                .clipped()
+        NavigationView {
+            List {
+                FeaturedLandmarks(landmarks: featured)
+                    .scaledToFill()
+                    .frame(height: 200)
+                    .clipped()
+                    .listRowInsets(EdgeInsets())
+                ForEach(categories.keys.sorted(), id: \.self) { key in
+                    CategoryRow(categoryName: key, items: self.categories[key] ?? [])
+                }
                 .listRowInsets(EdgeInsets())
-            ForEach(categories.keys.sorted(), id: \.self) { key in
-                CategoryRow(categoryName: key, items: self.categories[key] ?? [])
+                
+                NavigationLink(destination: LandmarkList()) {
+                    Text("See All")
+                }
             }
-            .listRowInsets(EdgeInsets())
-            
-            NavigationLink(destination: LandmarkList()) {
-                Text("See All")
+            .navigationBarTitle(Text("Featured"))
+            .navigationBarItems(trailing: profileButton)
+            .sheet(isPresented: $showingProfile) {
+                Text("User Profile")
             }
-        }
-        .navigationBarTitle(Text("Featured"))
-        .navigationBarItems(trailing: profileButton)
-        .sheet(isPresented: $showingProfile) {
-            Text("User Profile")
         }
     }
 }
