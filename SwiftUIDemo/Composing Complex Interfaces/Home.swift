@@ -47,7 +47,7 @@ struct CategoryHome: View {
                 }
                 .listRowInsets(EdgeInsets())
                 
-                NavigationLink(destination: LandmarkList()) {
+                NavigationLink(destination: LandmarkList().environmentObject(UserData())) {
                     Text("See All")
                 }
             }
